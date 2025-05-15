@@ -53,7 +53,6 @@ int main() {
     sf::CircleShape bola(50.f);
     bola.setOrigin(bola.getGeometricCenter());
     bola.setPosition(sf::Vector2((width / 2), (height / 2)));
-    //bola.setPointCount(8);
     bola.setTexture(&ballTexture);
     bola.setScale({ 1.5f, 1.5f });
 
@@ -93,12 +92,12 @@ int main() {
         playerMove(player2, sf::Keyboard::Key::Up, sf::Keyboard::Key::Down);
         ballMove(bola, velBola, player1, player2);
 
-        //colisões
+        //colisÃµes
         if (bola.getGlobalBounds().findIntersection(paredeCima.getGlobalBounds()) || bola.getGlobalBounds().findIntersection(paredeBaixo.getGlobalBounds())) {
             velBola.y *= -1.f;
         }
 
-        //pontuações
+        //pontuaÃ§Ãµes
 
         if (bola.getGlobalBounds().findIntersection(paredeEsquerda.getGlobalBounds())) {
             player2Score++;
